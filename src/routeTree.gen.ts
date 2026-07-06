@@ -9,20 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplashRouteImport } from './routes/splash'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as ProgressRouteImport } from './routes/progress'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as OtpRouteImport } from './routes/otp'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as InternshipsRouteImport } from './routes/internships'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as GlossaryRouteImport } from './routes/glossary'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as DownloadsRouteImport } from './routes/downloads'
@@ -44,6 +51,16 @@ import { Route as CoursesIdRouteImport } from './routes/courses.$id'
 import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies.$id'
 
+const SplashRoute = SplashRouteImport.update({
+  id: '/splash',
+  path: '/splash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -62,6 +79,11 @@ const SavedRoute = SavedRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuizRoute = QuizRouteImport.update({
@@ -84,9 +106,24 @@ const PlannerRoute = PlannerRouteImport.update({
   path: '/planner',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OtpRoute = OtpRouteImport.update({
+  id: '/otp',
+  path: '/otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NotificationsRoute = NotificationsRouteImport.update({
   id: '/notifications',
   path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibraryRoute = LibraryRouteImport.update({
@@ -112,6 +149,11 @@ const HelpRoute = HelpRouteImport.update({
 const GlossaryRoute = GlossaryRouteImport.update({
   id: '/glossary',
   path: '/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeedbackRoute = FeedbackRouteImport.update({
@@ -228,20 +270,27 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
   '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/glossary': typeof GlossaryRoute
   '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/login': typeof LoginRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
   '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRouteWithChildren
   '/progress': typeof ProgressRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
@@ -264,20 +313,27 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
   '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/glossary': typeof GlossaryRoute
   '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/login': typeof LoginRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
   '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRouteWithChildren
   '/progress': typeof ProgressRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
@@ -301,20 +357,27 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
   '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/glossary': typeof GlossaryRoute
   '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/login': typeof LoginRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
   '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRouteWithChildren
   '/progress': typeof ProgressRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
@@ -339,20 +402,27 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/events'
     | '/feedback'
+    | '/forgot-password'
     | '/glossary'
     | '/help'
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/login'
     | '/notifications'
+    | '/onboarding'
+    | '/otp'
     | '/planner'
     | '/profile'
     | '/progress'
     | '/quiz'
+    | '/reset-password'
     | '/resources'
     | '/saved'
     | '/search'
     | '/settings'
+    | '/signup'
+    | '/splash'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
@@ -375,20 +445,27 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/events'
     | '/feedback'
+    | '/forgot-password'
     | '/glossary'
     | '/help'
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/login'
     | '/notifications'
+    | '/onboarding'
+    | '/otp'
     | '/planner'
     | '/profile'
     | '/progress'
     | '/quiz'
+    | '/reset-password'
     | '/resources'
     | '/saved'
     | '/search'
     | '/settings'
+    | '/signup'
+    | '/splash'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
@@ -411,20 +488,27 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/events'
     | '/feedback'
+    | '/forgot-password'
     | '/glossary'
     | '/help'
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/login'
     | '/notifications'
+    | '/onboarding'
+    | '/otp'
     | '/planner'
     | '/profile'
     | '/progress'
     | '/quiz'
+    | '/reset-password'
     | '/resources'
     | '/saved'
     | '/search'
     | '/settings'
+    | '/signup'
+    | '/splash'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
@@ -448,24 +532,45 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   EventsRoute: typeof EventsRouteWithChildren
   FeedbackRoute: typeof FeedbackRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   GlossaryRoute: typeof GlossaryRoute
   HelpRoute: typeof HelpRoute
   InternshipsRoute: typeof InternshipsRouteWithChildren
   LeaderboardRoute: typeof LeaderboardRoute
   LibraryRoute: typeof LibraryRoute
+  LoginRoute: typeof LoginRoute
   NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  OtpRoute: typeof OtpRoute
   PlannerRoute: typeof PlannerRoute
   ProfileRoute: typeof ProfileRouteWithChildren
   ProgressRoute: typeof ProgressRoute
   QuizRoute: typeof QuizRouteWithChildren
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ResourcesRoute: typeof ResourcesRouteWithChildren
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
   SettingsRoute: typeof SettingsRoute
+  SignupRoute: typeof SignupRoute
+  SplashRoute: typeof SplashRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/splash': {
+      id: '/splash'
+      path: '/splash'
+      fullPath: '/splash'
+      preLoaderRoute: typeof SplashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
@@ -492,6 +597,13 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quiz': {
@@ -522,11 +634,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlannerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/otp': {
+      id: '/otp'
+      path: '/otp'
+      fullPath: '/otp'
+      preLoaderRoute: typeof OtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/notifications': {
       id: '/notifications'
       path: '/notifications'
       fullPath: '/notifications'
       preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/library': {
@@ -562,6 +695,13 @@ declare module '@tanstack/react-router' {
       path: '/glossary'
       fullPath: '/glossary'
       preLoaderRoute: typeof GlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/feedback': {
@@ -811,20 +951,27 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   EventsRoute: EventsRouteWithChildren,
   FeedbackRoute: FeedbackRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   GlossaryRoute: GlossaryRoute,
   HelpRoute: HelpRoute,
   InternshipsRoute: InternshipsRouteWithChildren,
   LeaderboardRoute: LeaderboardRoute,
   LibraryRoute: LibraryRoute,
+  LoginRoute: LoginRoute,
   NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  OtpRoute: OtpRoute,
   PlannerRoute: PlannerRoute,
   ProfileRoute: ProfileRouteWithChildren,
   ProgressRoute: ProgressRoute,
   QuizRoute: QuizRouteWithChildren,
+  ResetPasswordRoute: ResetPasswordRoute,
   ResourcesRoute: ResourcesRouteWithChildren,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
   SettingsRoute: SettingsRoute,
+  SignupRoute: SignupRoute,
+  SplashRoute: SplashRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
