@@ -9,38 +9,138 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as CommunityRouteImport } from './routes/community'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesIdRouteImport } from './routes/resources.$id'
+import { Route as CoursesIdRouteImport } from './routes/courses.$id'
+import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
 
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesIdRoute = ResourcesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const CoursesIdRoute = CoursesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => CoursesRoute,
+} as any)
+const CommunityPostIdRoute = CommunityPostIdRouteImport.update({
+  id: '/$postId',
+  path: '/$postId',
+  getParentRoute: () => CommunityRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/resources': typeof ResourcesRouteWithChildren
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/resources': typeof ResourcesRouteWithChildren
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/resources': typeof ResourcesRouteWithChildren
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/community'
+    | '/courses'
+    | '/resources'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/resources/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/community'
+    | '/courses'
+    | '/resources'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/resources/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/community'
+    | '/courses'
+    | '/resources'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/resources/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CommunityRoute: typeof CommunityRouteWithChildren
+  CoursesRoute: typeof CoursesRouteWithChildren
+  ResourcesRoute: typeof ResourcesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +148,70 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources/$id': {
+      id: '/resources/$id'
+      path: '/$id'
+      fullPath: '/resources/$id'
+      preLoaderRoute: typeof ResourcesIdRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/courses/$id': {
+      id: '/courses/$id'
+      path: '/$id'
+      fullPath: '/courses/$id'
+      preLoaderRoute: typeof CoursesIdRouteImport
+      parentRoute: typeof CoursesRoute
+    }
+    '/community/$postId': {
+      id: '/community/$postId'
+      path: '/$postId'
+      fullPath: '/community/$postId'
+      preLoaderRoute: typeof CommunityPostIdRouteImport
+      parentRoute: typeof CommunityRoute
+    }
   }
 }
 
+interface CommunityRouteChildren {
+  CommunityPostIdRoute: typeof CommunityPostIdRoute
+}
+
+const CommunityRouteChildren: CommunityRouteChildren = {
+  CommunityPostIdRoute: CommunityPostIdRoute,
+}
+
+const CommunityRouteWithChildren = CommunityRoute._addFileChildren(
+  CommunityRouteChildren,
+)
+
+interface CoursesRouteChildren {
+  CoursesIdRoute: typeof CoursesIdRoute
+}
+
+const CoursesRouteChildren: CoursesRouteChildren = {
+  CoursesIdRoute: CoursesIdRoute,
+}
+
+const CoursesRouteWithChildren =
+  CoursesRoute._addFileChildren(CoursesRouteChildren)
+
+interface ResourcesRouteChildren {
+  ResourcesIdRoute: typeof ResourcesIdRoute
+}
+
+const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesIdRoute: ResourcesIdRoute,
+}
+
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
+  ResourcesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CommunityRoute: CommunityRouteWithChildren,
+  CoursesRoute: CoursesRouteWithChildren,
+  ResourcesRoute: ResourcesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
