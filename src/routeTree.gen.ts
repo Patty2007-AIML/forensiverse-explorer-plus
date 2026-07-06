@@ -9,38 +9,931 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnderConstructionRouteImport } from './routes/under-construction'
+import { Route as SplashRouteImport } from './routes/splash'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ServerErrorRouteImport } from './routes/server-error'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SavedRouteImport } from './routes/saved'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as OtpRouteImport } from './routes/otp'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as NoInternetRouteImport } from './routes/no-internet'
+import { Route as MaintenanceRouteImport } from './routes/maintenance'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as LoadingRouteImport } from './routes/loading'
+import { Route as LibraryRouteImport } from './routes/library'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as InternshipsRouteImport } from './routes/internships'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as GlossaryRouteImport } from './routes/glossary'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as FeedbackRouteImport } from './routes/feedback'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as ComingSoonRouteImport } from './routes/coming-soon'
+import { Route as CertificatesRouteImport } from './routes/certificates'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as BookmarksRouteImport } from './routes/bookmarks'
+import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
+import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as AccessDeniedRouteImport } from './routes/access-denied'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesIdRouteImport } from './routes/resources.$id'
+import { Route as QuizResultsRouteImport } from './routes/quiz.results'
+import { Route as ProfileEditRouteImport } from './routes/profile.edit'
+import { Route as InternshipsIdRouteImport } from './routes/internships.$id'
+import { Route as EventsIdRouteImport } from './routes/events.$id'
+import { Route as EmptyKindRouteImport } from './routes/empty.$kind'
+import { Route as CoursesIdRouteImport } from './routes/courses.$id'
+import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
+import { Route as CaseStudiesIdRouteImport } from './routes/case-studies.$id'
 
+const UnderConstructionRoute = UnderConstructionRouteImport.update({
+  id: '/under-construction',
+  path: '/under-construction',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplashRoute = SplashRouteImport.update({
+  id: '/splash',
+  path: '/splash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServerErrorRoute = ServerErrorRouteImport.update({
+  id: '/server-error',
+  path: '/server-error',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SavedRoute = SavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtpRoute = OtpRouteImport.update({
+  id: '/otp',
+  path: '/otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoInternetRoute = NoInternetRouteImport.update({
+  id: '/no-internet',
+  path: '/no-internet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaintenanceRoute = MaintenanceRouteImport.update({
+  id: '/maintenance',
+  path: '/maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoadingRoute = LoadingRouteImport.update({
+  id: '/loading',
+  path: '/loading',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InternshipsRoute = InternshipsRouteImport.update({
+  id: '/internships',
+  path: '/internships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossaryRoute = GlossaryRouteImport.update({
+  id: '/glossary',
+  path: '/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComingSoonRoute = ComingSoonRouteImport.update({
+  id: '/coming-soon',
+  path: '/coming-soon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificatesRoute = CertificatesRouteImport.update({
+  id: '/certificates',
+  path: '/certificates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookmarksRoute = BookmarksRouteImport.update({
+  id: '/bookmarks',
+  path: '/bookmarks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiAssistantRoute = AiAssistantRouteImport.update({
+  id: '/ai-assistant',
+  path: '/ai-assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessDeniedRoute = AccessDeniedRouteImport.update({
+  id: '/access-denied',
+  path: '/access-denied',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesIdRoute = ResourcesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const QuizResultsRoute = QuizResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => QuizRoute,
+} as any)
+const ProfileEditRoute = ProfileEditRouteImport.update({
+  id: '/edit',
+  path: '/edit',
+  getParentRoute: () => ProfileRoute,
+} as any)
+const InternshipsIdRoute = InternshipsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => InternshipsRoute,
+} as any)
+const EventsIdRoute = EventsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EmptyKindRoute = EmptyKindRouteImport.update({
+  id: '/empty/$kind',
+  path: '/empty/$kind',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesIdRoute = CoursesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => CoursesRoute,
+} as any)
+const CommunityPostIdRoute = CommunityPostIdRouteImport.update({
+  id: '/$postId',
+  path: '/$postId',
+  getParentRoute: () => CommunityRoute,
+} as any)
+const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => CaseStudiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
+  '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
+  '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
+  '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
+  '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
+  '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
+  '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
+  '/community': typeof CommunityRouteWithChildren
+  '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
+  '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
+  '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
+  '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/otp': typeof OtpRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
+  '/community/$postId': typeof CommunityPostIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
+  '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/access-denied'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
+    | '/case-studies'
+    | '/certificates'
+    | '/coming-soon'
+    | '/community'
+    | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/feedback'
+    | '/forgot-password'
+    | '/glossary'
+    | '/help'
+    | '/internships'
+    | '/leaderboard'
+    | '/library'
+    | '/loading'
+    | '/login'
+    | '/maintenance'
+    | '/no-internet'
+    | '/notifications'
+    | '/onboarding'
+    | '/otp'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
+    | '/reset-password'
+    | '/resources'
+    | '/saved'
+    | '/search'
+    | '/server-error'
+    | '/settings'
+    | '/signup'
+    | '/splash'
+    | '/under-construction'
+    | '/case-studies/$id'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/empty/$kind'
+    | '/events/$id'
+    | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
+    | '/resources/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/access-denied'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
+    | '/case-studies'
+    | '/certificates'
+    | '/coming-soon'
+    | '/community'
+    | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/feedback'
+    | '/forgot-password'
+    | '/glossary'
+    | '/help'
+    | '/internships'
+    | '/leaderboard'
+    | '/library'
+    | '/loading'
+    | '/login'
+    | '/maintenance'
+    | '/no-internet'
+    | '/notifications'
+    | '/onboarding'
+    | '/otp'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
+    | '/reset-password'
+    | '/resources'
+    | '/saved'
+    | '/search'
+    | '/server-error'
+    | '/settings'
+    | '/signup'
+    | '/splash'
+    | '/under-construction'
+    | '/case-studies/$id'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/empty/$kind'
+    | '/events/$id'
+    | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
+    | '/resources/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/access-denied'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
+    | '/case-studies'
+    | '/certificates'
+    | '/coming-soon'
+    | '/community'
+    | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/feedback'
+    | '/forgot-password'
+    | '/glossary'
+    | '/help'
+    | '/internships'
+    | '/leaderboard'
+    | '/library'
+    | '/loading'
+    | '/login'
+    | '/maintenance'
+    | '/no-internet'
+    | '/notifications'
+    | '/onboarding'
+    | '/otp'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
+    | '/reset-password'
+    | '/resources'
+    | '/saved'
+    | '/search'
+    | '/server-error'
+    | '/settings'
+    | '/signup'
+    | '/splash'
+    | '/under-construction'
+    | '/case-studies/$id'
+    | '/community/$postId'
+    | '/courses/$id'
+    | '/empty/$kind'
+    | '/events/$id'
+    | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
+    | '/resources/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccessDeniedRoute: typeof AccessDeniedRoute
+  AchievementsRoute: typeof AchievementsRoute
+  AiAssistantRoute: typeof AiAssistantRoute
+  BookmarksRoute: typeof BookmarksRoute
+  CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  CertificatesRoute: typeof CertificatesRoute
+  ComingSoonRoute: typeof ComingSoonRoute
+  CommunityRoute: typeof CommunityRouteWithChildren
+  CoursesRoute: typeof CoursesRouteWithChildren
+  DownloadsRoute: typeof DownloadsRoute
+  EventsRoute: typeof EventsRouteWithChildren
+  FeedbackRoute: typeof FeedbackRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  GlossaryRoute: typeof GlossaryRoute
+  HelpRoute: typeof HelpRoute
+  InternshipsRoute: typeof InternshipsRouteWithChildren
+  LeaderboardRoute: typeof LeaderboardRoute
+  LibraryRoute: typeof LibraryRoute
+  LoadingRoute: typeof LoadingRoute
+  LoginRoute: typeof LoginRoute
+  MaintenanceRoute: typeof MaintenanceRoute
+  NoInternetRoute: typeof NoInternetRoute
+  NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  OtpRoute: typeof OtpRoute
+  PlannerRoute: typeof PlannerRoute
+  ProfileRoute: typeof ProfileRouteWithChildren
+  ProgressRoute: typeof ProgressRoute
+  QuizRoute: typeof QuizRouteWithChildren
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  ResourcesRoute: typeof ResourcesRouteWithChildren
+  SavedRoute: typeof SavedRoute
+  SearchRoute: typeof SearchRoute
+  ServerErrorRoute: typeof ServerErrorRoute
+  SettingsRoute: typeof SettingsRoute
+  SignupRoute: typeof SignupRoute
+  SplashRoute: typeof SplashRoute
+  UnderConstructionRoute: typeof UnderConstructionRoute
+  EmptyKindRoute: typeof EmptyKindRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/under-construction': {
+      id: '/under-construction'
+      path: '/under-construction'
+      fullPath: '/under-construction'
+      preLoaderRoute: typeof UnderConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/splash': {
+      id: '/splash'
+      path: '/splash'
+      fullPath: '/splash'
+      preLoaderRoute: typeof SplashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/server-error': {
+      id: '/server-error'
+      path: '/server-error'
+      fullPath: '/server-error'
+      preLoaderRoute: typeof ServerErrorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saved': {
+      id: '/saved'
+      path: '/saved'
+      fullPath: '/saved'
+      preLoaderRoute: typeof SavedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/otp': {
+      id: '/otp'
+      path: '/otp'
+      fullPath: '/otp'
+      preLoaderRoute: typeof OtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/no-internet': {
+      id: '/no-internet'
+      path: '/no-internet'
+      fullPath: '/no-internet'
+      preLoaderRoute: typeof NoInternetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maintenance': {
+      id: '/maintenance'
+      path: '/maintenance'
+      fullPath: '/maintenance'
+      preLoaderRoute: typeof MaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loading': {
+      id: '/loading'
+      path: '/loading'
+      fullPath: '/loading'
+      preLoaderRoute: typeof LoadingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/internships': {
+      id: '/internships'
+      path: '/internships'
+      fullPath: '/internships'
+      preLoaderRoute: typeof InternshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary': {
+      id: '/glossary'
+      path: '/glossary'
+      fullPath: '/glossary'
+      preLoaderRoute: typeof GlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coming-soon': {
+      id: '/coming-soon'
+      path: '/coming-soon'
+      fullPath: '/coming-soon'
+      preLoaderRoute: typeof ComingSoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificates': {
+      id: '/certificates'
+      path: '/certificates'
+      fullPath: '/certificates'
+      preLoaderRoute: typeof CertificatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookmarks': {
+      id: '/bookmarks'
+      path: '/bookmarks'
+      fullPath: '/bookmarks'
+      preLoaderRoute: typeof BookmarksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-assistant': {
+      id: '/ai-assistant'
+      path: '/ai-assistant'
+      fullPath: '/ai-assistant'
+      preLoaderRoute: typeof AiAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/access-denied': {
+      id: '/access-denied'
+      path: '/access-denied'
+      fullPath: '/access-denied'
+      preLoaderRoute: typeof AccessDeniedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +941,206 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources/$id': {
+      id: '/resources/$id'
+      path: '/$id'
+      fullPath: '/resources/$id'
+      preLoaderRoute: typeof ResourcesIdRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/quiz/results': {
+      id: '/quiz/results'
+      path: '/results'
+      fullPath: '/quiz/results'
+      preLoaderRoute: typeof QuizResultsRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/profile/edit': {
+      id: '/profile/edit'
+      path: '/edit'
+      fullPath: '/profile/edit'
+      preLoaderRoute: typeof ProfileEditRouteImport
+      parentRoute: typeof ProfileRoute
+    }
+    '/internships/$id': {
+      id: '/internships/$id'
+      path: '/$id'
+      fullPath: '/internships/$id'
+      preLoaderRoute: typeof InternshipsIdRouteImport
+      parentRoute: typeof InternshipsRoute
+    }
+    '/events/$id': {
+      id: '/events/$id'
+      path: '/$id'
+      fullPath: '/events/$id'
+      preLoaderRoute: typeof EventsIdRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/empty/$kind': {
+      id: '/empty/$kind'
+      path: '/empty/$kind'
+      fullPath: '/empty/$kind'
+      preLoaderRoute: typeof EmptyKindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$id': {
+      id: '/courses/$id'
+      path: '/$id'
+      fullPath: '/courses/$id'
+      preLoaderRoute: typeof CoursesIdRouteImport
+      parentRoute: typeof CoursesRoute
+    }
+    '/community/$postId': {
+      id: '/community/$postId'
+      path: '/$postId'
+      fullPath: '/community/$postId'
+      preLoaderRoute: typeof CommunityPostIdRouteImport
+      parentRoute: typeof CommunityRoute
+    }
+    '/case-studies/$id': {
+      id: '/case-studies/$id'
+      path: '/$id'
+      fullPath: '/case-studies/$id'
+      preLoaderRoute: typeof CaseStudiesIdRouteImport
+      parentRoute: typeof CaseStudiesRoute
+    }
   }
 }
 
+interface CaseStudiesRouteChildren {
+  CaseStudiesIdRoute: typeof CaseStudiesIdRoute
+}
+
+const CaseStudiesRouteChildren: CaseStudiesRouteChildren = {
+  CaseStudiesIdRoute: CaseStudiesIdRoute,
+}
+
+const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
+  CaseStudiesRouteChildren,
+)
+
+interface CommunityRouteChildren {
+  CommunityPostIdRoute: typeof CommunityPostIdRoute
+}
+
+const CommunityRouteChildren: CommunityRouteChildren = {
+  CommunityPostIdRoute: CommunityPostIdRoute,
+}
+
+const CommunityRouteWithChildren = CommunityRoute._addFileChildren(
+  CommunityRouteChildren,
+)
+
+interface CoursesRouteChildren {
+  CoursesIdRoute: typeof CoursesIdRoute
+}
+
+const CoursesRouteChildren: CoursesRouteChildren = {
+  CoursesIdRoute: CoursesIdRoute,
+}
+
+const CoursesRouteWithChildren =
+  CoursesRoute._addFileChildren(CoursesRouteChildren)
+
+interface EventsRouteChildren {
+  EventsIdRoute: typeof EventsIdRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsIdRoute: EventsIdRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
+
+interface InternshipsRouteChildren {
+  InternshipsIdRoute: typeof InternshipsIdRoute
+}
+
+const InternshipsRouteChildren: InternshipsRouteChildren = {
+  InternshipsIdRoute: InternshipsIdRoute,
+}
+
+const InternshipsRouteWithChildren = InternshipsRoute._addFileChildren(
+  InternshipsRouteChildren,
+)
+
+interface ProfileRouteChildren {
+  ProfileEditRoute: typeof ProfileEditRoute
+}
+
+const ProfileRouteChildren: ProfileRouteChildren = {
+  ProfileEditRoute: ProfileEditRoute,
+}
+
+const ProfileRouteWithChildren =
+  ProfileRoute._addFileChildren(ProfileRouteChildren)
+
+interface QuizRouteChildren {
+  QuizResultsRoute: typeof QuizResultsRoute
+}
+
+const QuizRouteChildren: QuizRouteChildren = {
+  QuizResultsRoute: QuizResultsRoute,
+}
+
+const QuizRouteWithChildren = QuizRoute._addFileChildren(QuizRouteChildren)
+
+interface ResourcesRouteChildren {
+  ResourcesIdRoute: typeof ResourcesIdRoute
+}
+
+const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesIdRoute: ResourcesIdRoute,
+}
+
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
+  ResourcesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccessDeniedRoute: AccessDeniedRoute,
+  AchievementsRoute: AchievementsRoute,
+  AiAssistantRoute: AiAssistantRoute,
+  BookmarksRoute: BookmarksRoute,
+  CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  CertificatesRoute: CertificatesRoute,
+  ComingSoonRoute: ComingSoonRoute,
+  CommunityRoute: CommunityRouteWithChildren,
+  CoursesRoute: CoursesRouteWithChildren,
+  DownloadsRoute: DownloadsRoute,
+  EventsRoute: EventsRouteWithChildren,
+  FeedbackRoute: FeedbackRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  GlossaryRoute: GlossaryRoute,
+  HelpRoute: HelpRoute,
+  InternshipsRoute: InternshipsRouteWithChildren,
+  LeaderboardRoute: LeaderboardRoute,
+  LibraryRoute: LibraryRoute,
+  LoadingRoute: LoadingRoute,
+  LoginRoute: LoginRoute,
+  MaintenanceRoute: MaintenanceRoute,
+  NoInternetRoute: NoInternetRoute,
+  NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  OtpRoute: OtpRoute,
+  PlannerRoute: PlannerRoute,
+  ProfileRoute: ProfileRouteWithChildren,
+  ProgressRoute: ProgressRoute,
+  QuizRoute: QuizRouteWithChildren,
+  ResetPasswordRoute: ResetPasswordRoute,
+  ResourcesRoute: ResourcesRouteWithChildren,
+  SavedRoute: SavedRoute,
+  SearchRoute: SearchRoute,
+  ServerErrorRoute: ServerErrorRoute,
+  SettingsRoute: SettingsRoute,
+  SignupRoute: SignupRoute,
+  SplashRoute: SplashRoute,
+  UnderConstructionRoute: UnderConstructionRoute,
+  EmptyKindRoute: EmptyKindRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
