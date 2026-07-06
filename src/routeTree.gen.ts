@@ -9,17 +9,57 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as LibraryRouteImport } from './routes/library'
+import { Route as InternshipsRouteImport } from './routes/internships'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as CommunityRouteImport } from './routes/community'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIdRouteImport } from './routes/resources.$id'
+import { Route as InternshipsIdRouteImport } from './routes/internships.$id'
+import { Route as EventsIdRouteImport } from './routes/events.$id'
 import { Route as CoursesIdRouteImport } from './routes/courses.$id'
 import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
+import { Route as CaseStudiesIdRouteImport } from './routes/case-studies.$id'
 
+const SavedRoute = SavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InternshipsRoute = InternshipsRouteImport.update({
+  id: '/internships',
+  path: '/internships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoursesRoute = CoursesRouteImport.update({
@@ -32,6 +72,11 @@ const CommunityRoute = CommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -41,6 +86,16 @@ const ResourcesIdRoute = ResourcesIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ResourcesRoute,
+} as any)
+const InternshipsIdRoute = InternshipsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => InternshipsRoute,
+} as any)
+const EventsIdRoute = EventsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => EventsRoute,
 } as any)
 const CoursesIdRoute = CoursesIdRouteImport.update({
   id: '/$id',
@@ -52,79 +107,193 @@ const CommunityPostIdRoute = CommunityPostIdRouteImport.update({
   path: '/$postId',
   getParentRoute: () => CommunityRoute,
 } as any)
+const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => CaseStudiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/internships': typeof InternshipsRouteWithChildren
+  '/library': typeof LibraryRoute
+  '/notifications': typeof NotificationsRoute
   '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/internships': typeof InternshipsRouteWithChildren
+  '/library': typeof LibraryRoute
+  '/notifications': typeof NotificationsRoute
   '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/case-studies': typeof CaseStudiesRouteWithChildren
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
+  '/downloads': typeof DownloadsRoute
+  '/events': typeof EventsRouteWithChildren
+  '/internships': typeof InternshipsRouteWithChildren
+  '/library': typeof LibraryRoute
+  '/notifications': typeof NotificationsRoute
   '/resources': typeof ResourcesRouteWithChildren
+  '/saved': typeof SavedRoute
+  '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/internships/$id': typeof InternshipsIdRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/case-studies'
     | '/community'
     | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/internships'
+    | '/library'
+    | '/notifications'
     | '/resources'
+    | '/saved'
+    | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/events/$id'
+    | '/internships/$id'
     | '/resources/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/case-studies'
     | '/community'
     | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/internships'
+    | '/library'
+    | '/notifications'
     | '/resources'
+    | '/saved'
+    | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/events/$id'
+    | '/internships/$id'
     | '/resources/$id'
   id:
     | '__root__'
     | '/'
+    | '/case-studies'
     | '/community'
     | '/courses'
+    | '/downloads'
+    | '/events'
+    | '/internships'
+    | '/library'
+    | '/notifications'
     | '/resources'
+    | '/saved'
+    | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/events/$id'
+    | '/internships/$id'
     | '/resources/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   CommunityRoute: typeof CommunityRouteWithChildren
   CoursesRoute: typeof CoursesRouteWithChildren
+  DownloadsRoute: typeof DownloadsRoute
+  EventsRoute: typeof EventsRouteWithChildren
+  InternshipsRoute: typeof InternshipsRouteWithChildren
+  LibraryRoute: typeof LibraryRoute
+  NotificationsRoute: typeof NotificationsRoute
   ResourcesRoute: typeof ResourcesRouteWithChildren
+  SavedRoute: typeof SavedRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/saved': {
+      id: '/saved'
+      path: '/saved'
+      fullPath: '/saved'
+      preLoaderRoute: typeof SavedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/internships': {
+      id: '/internships'
+      path: '/internships'
+      fullPath: '/internships'
+      preLoaderRoute: typeof InternshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/courses': {
@@ -141,6 +310,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -154,6 +330,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/resources/$id'
       preLoaderRoute: typeof ResourcesIdRouteImport
       parentRoute: typeof ResourcesRoute
+    }
+    '/internships/$id': {
+      id: '/internships/$id'
+      path: '/$id'
+      fullPath: '/internships/$id'
+      preLoaderRoute: typeof InternshipsIdRouteImport
+      parentRoute: typeof InternshipsRoute
+    }
+    '/events/$id': {
+      id: '/events/$id'
+      path: '/$id'
+      fullPath: '/events/$id'
+      preLoaderRoute: typeof EventsIdRouteImport
+      parentRoute: typeof EventsRoute
     }
     '/courses/$id': {
       id: '/courses/$id'
@@ -169,8 +359,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityPostIdRouteImport
       parentRoute: typeof CommunityRoute
     }
+    '/case-studies/$id': {
+      id: '/case-studies/$id'
+      path: '/$id'
+      fullPath: '/case-studies/$id'
+      preLoaderRoute: typeof CaseStudiesIdRouteImport
+      parentRoute: typeof CaseStudiesRoute
+    }
   }
 }
+
+interface CaseStudiesRouteChildren {
+  CaseStudiesIdRoute: typeof CaseStudiesIdRoute
+}
+
+const CaseStudiesRouteChildren: CaseStudiesRouteChildren = {
+  CaseStudiesIdRoute: CaseStudiesIdRoute,
+}
+
+const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
+  CaseStudiesRouteChildren,
+)
 
 interface CommunityRouteChildren {
   CommunityPostIdRoute: typeof CommunityPostIdRoute
@@ -195,6 +404,29 @@ const CoursesRouteChildren: CoursesRouteChildren = {
 const CoursesRouteWithChildren =
   CoursesRoute._addFileChildren(CoursesRouteChildren)
 
+interface EventsRouteChildren {
+  EventsIdRoute: typeof EventsIdRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsIdRoute: EventsIdRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
+
+interface InternshipsRouteChildren {
+  InternshipsIdRoute: typeof InternshipsIdRoute
+}
+
+const InternshipsRouteChildren: InternshipsRouteChildren = {
+  InternshipsIdRoute: InternshipsIdRoute,
+}
+
+const InternshipsRouteWithChildren = InternshipsRoute._addFileChildren(
+  InternshipsRouteChildren,
+)
+
 interface ResourcesRouteChildren {
   ResourcesIdRoute: typeof ResourcesIdRoute
 }
@@ -209,9 +441,16 @@ const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CaseStudiesRoute: CaseStudiesRouteWithChildren,
   CommunityRoute: CommunityRouteWithChildren,
   CoursesRoute: CoursesRouteWithChildren,
+  DownloadsRoute: DownloadsRoute,
+  EventsRoute: EventsRouteWithChildren,
+  InternshipsRoute: InternshipsRouteWithChildren,
+  LibraryRoute: LibraryRoute,
+  NotificationsRoute: NotificationsRoute,
   ResourcesRoute: ResourcesRouteWithChildren,
+  SavedRoute: SavedRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
