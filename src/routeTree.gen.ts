@@ -9,9 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnderConstructionRouteImport } from './routes/under-construction'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ServerErrorRouteImport } from './routes/server-error'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ResourcesRouteImport } from './routes/resources'
@@ -23,7 +25,10 @@ import { Route as PlannerRouteImport } from './routes/planner'
 import { Route as OtpRouteImport } from './routes/otp'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as NoInternetRouteImport } from './routes/no-internet'
+import { Route as MaintenanceRouteImport } from './routes/maintenance'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as LoadingRouteImport } from './routes/loading'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as InternshipsRouteImport } from './routes/internships'
@@ -35,11 +40,13 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as CommunityRouteImport } from './routes/community'
+import { Route as ComingSoonRouteImport } from './routes/coming-soon'
 import { Route as CertificatesRouteImport } from './routes/certificates'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
 import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as AccessDeniedRouteImport } from './routes/access-denied'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIdRouteImport } from './routes/resources.$id'
@@ -47,10 +54,16 @@ import { Route as QuizResultsRouteImport } from './routes/quiz.results'
 import { Route as ProfileEditRouteImport } from './routes/profile.edit'
 import { Route as InternshipsIdRouteImport } from './routes/internships.$id'
 import { Route as EventsIdRouteImport } from './routes/events.$id'
+import { Route as EmptyKindRouteImport } from './routes/empty.$kind'
 import { Route as CoursesIdRouteImport } from './routes/courses.$id'
 import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies.$id'
 
+const UnderConstructionRoute = UnderConstructionRouteImport.update({
+  id: '/under-construction',
+  path: '/under-construction',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SplashRoute = SplashRouteImport.update({
   id: '/splash',
   path: '/splash',
@@ -64,6 +77,11 @@ const SignupRoute = SignupRouteImport.update({
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServerErrorRoute = ServerErrorRouteImport.update({
+  id: '/server-error',
+  path: '/server-error',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SearchRoute = SearchRouteImport.update({
@@ -121,9 +139,24 @@ const NotificationsRoute = NotificationsRouteImport.update({
   path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NoInternetRoute = NoInternetRouteImport.update({
+  id: '/no-internet',
+  path: '/no-internet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaintenanceRoute = MaintenanceRouteImport.update({
+  id: '/maintenance',
+  path: '/maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoadingRoute = LoadingRouteImport.update({
+  id: '/loading',
+  path: '/loading',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibraryRoute = LibraryRouteImport.update({
@@ -181,6 +214,11 @@ const CommunityRoute = CommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComingSoonRoute = ComingSoonRouteImport.update({
+  id: '/coming-soon',
+  path: '/coming-soon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CertificatesRoute = CertificatesRouteImport.update({
   id: '/certificates',
   path: '/certificates',
@@ -204,6 +242,11 @@ const AiAssistantRoute = AiAssistantRouteImport.update({
 const AchievementsRoute = AchievementsRouteImport.update({
   id: '/achievements',
   path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessDeniedRoute = AccessDeniedRouteImport.update({
+  id: '/access-denied',
+  path: '/access-denied',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -241,6 +284,11 @@ const EventsIdRoute = EventsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => EventsRoute,
 } as any)
+const EmptyKindRoute = EmptyKindRouteImport.update({
+  id: '/empty/$kind',
+  path: '/empty/$kind',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CoursesIdRoute = CoursesIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -260,11 +308,13 @@ const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/achievements': typeof AchievementsRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
@@ -276,7 +326,10 @@ export interface FileRoutesByFullPath {
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
   '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/otp': typeof OtpRoute
@@ -288,12 +341,15 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
   '/profile/edit': typeof ProfileEditRoute
@@ -303,11 +359,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/achievements': typeof AchievementsRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
@@ -319,7 +377,10 @@ export interface FileRoutesByTo {
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
   '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/otp': typeof OtpRoute
@@ -331,12 +392,15 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
   '/profile/edit': typeof ProfileEditRoute
@@ -347,11 +411,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/access-denied': typeof AccessDeniedRoute
   '/achievements': typeof AchievementsRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/certificates': typeof CertificatesRoute
+  '/coming-soon': typeof ComingSoonRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
@@ -363,7 +429,10 @@ export interface FileRoutesById {
   '/internships': typeof InternshipsRouteWithChildren
   '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
+  '/loading': typeof LoadingRoute
   '/login': typeof LoginRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/no-internet': typeof NoInternetRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/otp': typeof OtpRoute
@@ -375,12 +444,15 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
   '/search': typeof SearchRoute
+  '/server-error': typeof ServerErrorRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/splash': typeof SplashRoute
+  '/under-construction': typeof UnderConstructionRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
+  '/empty/$kind': typeof EmptyKindRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
   '/profile/edit': typeof ProfileEditRoute
@@ -392,11 +464,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/access-denied'
     | '/achievements'
     | '/ai-assistant'
     | '/bookmarks'
     | '/case-studies'
     | '/certificates'
+    | '/coming-soon'
     | '/community'
     | '/courses'
     | '/downloads'
@@ -408,7 +482,10 @@ export interface FileRouteTypes {
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/loading'
     | '/login'
+    | '/maintenance'
+    | '/no-internet'
     | '/notifications'
     | '/onboarding'
     | '/otp'
@@ -420,12 +497,15 @@ export interface FileRouteTypes {
     | '/resources'
     | '/saved'
     | '/search'
+    | '/server-error'
     | '/settings'
     | '/signup'
     | '/splash'
+    | '/under-construction'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/empty/$kind'
     | '/events/$id'
     | '/internships/$id'
     | '/profile/edit'
@@ -435,11 +515,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/access-denied'
     | '/achievements'
     | '/ai-assistant'
     | '/bookmarks'
     | '/case-studies'
     | '/certificates'
+    | '/coming-soon'
     | '/community'
     | '/courses'
     | '/downloads'
@@ -451,7 +533,10 @@ export interface FileRouteTypes {
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/loading'
     | '/login'
+    | '/maintenance'
+    | '/no-internet'
     | '/notifications'
     | '/onboarding'
     | '/otp'
@@ -463,12 +548,15 @@ export interface FileRouteTypes {
     | '/resources'
     | '/saved'
     | '/search'
+    | '/server-error'
     | '/settings'
     | '/signup'
     | '/splash'
+    | '/under-construction'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/empty/$kind'
     | '/events/$id'
     | '/internships/$id'
     | '/profile/edit'
@@ -478,11 +566,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/access-denied'
     | '/achievements'
     | '/ai-assistant'
     | '/bookmarks'
     | '/case-studies'
     | '/certificates'
+    | '/coming-soon'
     | '/community'
     | '/courses'
     | '/downloads'
@@ -494,7 +584,10 @@ export interface FileRouteTypes {
     | '/internships'
     | '/leaderboard'
     | '/library'
+    | '/loading'
     | '/login'
+    | '/maintenance'
+    | '/no-internet'
     | '/notifications'
     | '/onboarding'
     | '/otp'
@@ -506,12 +599,15 @@ export interface FileRouteTypes {
     | '/resources'
     | '/saved'
     | '/search'
+    | '/server-error'
     | '/settings'
     | '/signup'
     | '/splash'
+    | '/under-construction'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
+    | '/empty/$kind'
     | '/events/$id'
     | '/internships/$id'
     | '/profile/edit'
@@ -522,11 +618,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessDeniedRoute: typeof AccessDeniedRoute
   AchievementsRoute: typeof AchievementsRoute
   AiAssistantRoute: typeof AiAssistantRoute
   BookmarksRoute: typeof BookmarksRoute
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   CertificatesRoute: typeof CertificatesRoute
+  ComingSoonRoute: typeof ComingSoonRoute
   CommunityRoute: typeof CommunityRouteWithChildren
   CoursesRoute: typeof CoursesRouteWithChildren
   DownloadsRoute: typeof DownloadsRoute
@@ -538,7 +636,10 @@ export interface RootRouteChildren {
   InternshipsRoute: typeof InternshipsRouteWithChildren
   LeaderboardRoute: typeof LeaderboardRoute
   LibraryRoute: typeof LibraryRoute
+  LoadingRoute: typeof LoadingRoute
   LoginRoute: typeof LoginRoute
+  MaintenanceRoute: typeof MaintenanceRoute
+  NoInternetRoute: typeof NoInternetRoute
   NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
   OtpRoute: typeof OtpRoute
@@ -550,13 +651,23 @@ export interface RootRouteChildren {
   ResourcesRoute: typeof ResourcesRouteWithChildren
   SavedRoute: typeof SavedRoute
   SearchRoute: typeof SearchRoute
+  ServerErrorRoute: typeof ServerErrorRoute
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
   SplashRoute: typeof SplashRoute
+  UnderConstructionRoute: typeof UnderConstructionRoute
+  EmptyKindRoute: typeof EmptyKindRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/under-construction': {
+      id: '/under-construction'
+      path: '/under-construction'
+      fullPath: '/under-construction'
+      preLoaderRoute: typeof UnderConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/splash': {
       id: '/splash'
       path: '/splash'
@@ -576,6 +687,13 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/server-error': {
+      id: '/server-error'
+      path: '/server-error'
+      fullPath: '/server-error'
+      preLoaderRoute: typeof ServerErrorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/search': {
@@ -655,11 +773,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/no-internet': {
+      id: '/no-internet'
+      path: '/no-internet'
+      fullPath: '/no-internet'
+      preLoaderRoute: typeof NoInternetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maintenance': {
+      id: '/maintenance'
+      path: '/maintenance'
+      fullPath: '/maintenance'
+      preLoaderRoute: typeof MaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loading': {
+      id: '/loading'
+      path: '/loading'
+      fullPath: '/loading'
+      preLoaderRoute: typeof LoadingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/library': {
@@ -739,6 +878,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coming-soon': {
+      id: '/coming-soon'
+      path: '/coming-soon'
+      fullPath: '/coming-soon'
+      preLoaderRoute: typeof ComingSoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/certificates': {
       id: '/certificates'
       path: '/certificates'
@@ -772,6 +918,13 @@ declare module '@tanstack/react-router' {
       path: '/achievements'
       fullPath: '/achievements'
       preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/access-denied': {
+      id: '/access-denied'
+      path: '/access-denied'
+      fullPath: '/access-denied'
+      preLoaderRoute: typeof AccessDeniedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -822,6 +975,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/events/$id'
       preLoaderRoute: typeof EventsIdRouteImport
       parentRoute: typeof EventsRoute
+    }
+    '/empty/$kind': {
+      id: '/empty/$kind'
+      path: '/empty/$kind'
+      fullPath: '/empty/$kind'
+      preLoaderRoute: typeof EmptyKindRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/courses/$id': {
       id: '/courses/$id'
@@ -941,11 +1101,13 @@ const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessDeniedRoute: AccessDeniedRoute,
   AchievementsRoute: AchievementsRoute,
   AiAssistantRoute: AiAssistantRoute,
   BookmarksRoute: BookmarksRoute,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
   CertificatesRoute: CertificatesRoute,
+  ComingSoonRoute: ComingSoonRoute,
   CommunityRoute: CommunityRouteWithChildren,
   CoursesRoute: CoursesRouteWithChildren,
   DownloadsRoute: DownloadsRoute,
@@ -957,7 +1119,10 @@ const rootRouteChildren: RootRouteChildren = {
   InternshipsRoute: InternshipsRouteWithChildren,
   LeaderboardRoute: LeaderboardRoute,
   LibraryRoute: LibraryRoute,
+  LoadingRoute: LoadingRoute,
   LoginRoute: LoginRoute,
+  MaintenanceRoute: MaintenanceRoute,
+  NoInternetRoute: NoInternetRoute,
   NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
   OtpRoute: OtpRoute,
@@ -969,9 +1134,12 @@ const rootRouteChildren: RootRouteChildren = {
   ResourcesRoute: ResourcesRouteWithChildren,
   SavedRoute: SavedRoute,
   SearchRoute: SearchRoute,
+  ServerErrorRoute: ServerErrorRoute,
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
   SplashRoute: SplashRoute,
+  UnderConstructionRoute: UnderConstructionRoute,
+  EmptyKindRoute: EmptyKindRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
