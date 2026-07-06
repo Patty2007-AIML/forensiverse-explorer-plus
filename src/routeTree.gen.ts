@@ -9,24 +9,51 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as PlannerRouteImport } from './routes/planner'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as InternshipsRouteImport } from './routes/internships'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as GlossaryRouteImport } from './routes/glossary'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as CommunityRouteImport } from './routes/community'
+import { Route as CertificatesRouteImport } from './routes/certificates'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as BookmarksRouteImport } from './routes/bookmarks'
+import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
+import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIdRouteImport } from './routes/resources.$id'
+import { Route as QuizResultsRouteImport } from './routes/quiz.results'
+import { Route as ProfileEditRouteImport } from './routes/profile.edit'
 import { Route as InternshipsIdRouteImport } from './routes/internships.$id'
 import { Route as EventsIdRouteImport } from './routes/events.$id'
 import { Route as CoursesIdRouteImport } from './routes/courses.$id'
 import { Route as CommunityPostIdRouteImport } from './routes/community.$postId'
 import { Route as CaseStudiesIdRouteImport } from './routes/case-studies.$id'
 
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SavedRoute = SavedRouteImport.update({
   id: '/saved',
   path: '/saved',
@@ -35,6 +62,26 @@ const SavedRoute = SavedRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotificationsRoute = NotificationsRouteImport.update({
@@ -47,9 +94,29 @@ const LibraryRoute = LibraryRouteImport.update({
   path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InternshipsRoute = InternshipsRouteImport.update({
   id: '/internships',
   path: '/internships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossaryRoute = GlossaryRouteImport.update({
+  id: '/glossary',
+  path: '/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -72,9 +139,34 @@ const CommunityRoute = CommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CertificatesRoute = CertificatesRouteImport.update({
+  id: '/certificates',
+  path: '/certificates',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookmarksRoute = BookmarksRouteImport.update({
+  id: '/bookmarks',
+  path: '/bookmarks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiAssistantRoute = AiAssistantRouteImport.update({
+  id: '/ai-assistant',
+  path: '/ai-assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -86,6 +178,16 @@ const ResourcesIdRoute = ResourcesIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ResourcesRoute,
+} as any)
+const QuizResultsRoute = QuizResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => QuizRoute,
+} as any)
+const ProfileEditRoute = ProfileEditRouteImport.update({
+  id: '/edit',
+  path: '/edit',
+  getParentRoute: () => ProfileRoute,
 } as any)
 const InternshipsIdRoute = InternshipsIdRouteImport.update({
   id: '/$id',
@@ -115,138 +217,269 @@ const CaseStudiesIdRoute = CaseStudiesIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
   '/notifications': typeof NotificationsRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
   '/notifications': typeof NotificationsRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/bookmarks': typeof BookmarksRoute
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/certificates': typeof CertificatesRoute
   '/community': typeof CommunityRouteWithChildren
   '/courses': typeof CoursesRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/events': typeof EventsRouteWithChildren
+  '/feedback': typeof FeedbackRoute
+  '/glossary': typeof GlossaryRoute
+  '/help': typeof HelpRoute
   '/internships': typeof InternshipsRouteWithChildren
+  '/leaderboard': typeof LeaderboardRoute
   '/library': typeof LibraryRoute
   '/notifications': typeof NotificationsRoute
+  '/planner': typeof PlannerRoute
+  '/profile': typeof ProfileRouteWithChildren
+  '/progress': typeof ProgressRoute
+  '/quiz': typeof QuizRouteWithChildren
   '/resources': typeof ResourcesRouteWithChildren
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/case-studies/$id': typeof CaseStudiesIdRoute
   '/community/$postId': typeof CommunityPostIdRoute
   '/courses/$id': typeof CoursesIdRoute
   '/events/$id': typeof EventsIdRoute
   '/internships/$id': typeof InternshipsIdRoute
+  '/profile/edit': typeof ProfileEditRoute
+  '/quiz/results': typeof QuizResultsRoute
   '/resources/$id': typeof ResourcesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
     | '/case-studies'
+    | '/certificates'
     | '/community'
     | '/courses'
     | '/downloads'
     | '/events'
+    | '/feedback'
+    | '/glossary'
+    | '/help'
     | '/internships'
+    | '/leaderboard'
     | '/library'
     | '/notifications'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
     | '/resources'
     | '/saved'
+    | '/search'
+    | '/settings'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
     | '/events/$id'
     | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
     | '/resources/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
     | '/case-studies'
+    | '/certificates'
     | '/community'
     | '/courses'
     | '/downloads'
     | '/events'
+    | '/feedback'
+    | '/glossary'
+    | '/help'
     | '/internships'
+    | '/leaderboard'
     | '/library'
     | '/notifications'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
     | '/resources'
     | '/saved'
+    | '/search'
+    | '/settings'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
     | '/events/$id'
     | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
     | '/resources/$id'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/achievements'
+    | '/ai-assistant'
+    | '/bookmarks'
     | '/case-studies'
+    | '/certificates'
     | '/community'
     | '/courses'
     | '/downloads'
     | '/events'
+    | '/feedback'
+    | '/glossary'
+    | '/help'
     | '/internships'
+    | '/leaderboard'
     | '/library'
     | '/notifications'
+    | '/planner'
+    | '/profile'
+    | '/progress'
+    | '/quiz'
     | '/resources'
     | '/saved'
+    | '/search'
+    | '/settings'
     | '/case-studies/$id'
     | '/community/$postId'
     | '/courses/$id'
     | '/events/$id'
     | '/internships/$id'
+    | '/profile/edit'
+    | '/quiz/results'
     | '/resources/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AchievementsRoute: typeof AchievementsRoute
+  AiAssistantRoute: typeof AiAssistantRoute
+  BookmarksRoute: typeof BookmarksRoute
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  CertificatesRoute: typeof CertificatesRoute
   CommunityRoute: typeof CommunityRouteWithChildren
   CoursesRoute: typeof CoursesRouteWithChildren
   DownloadsRoute: typeof DownloadsRoute
   EventsRoute: typeof EventsRouteWithChildren
+  FeedbackRoute: typeof FeedbackRoute
+  GlossaryRoute: typeof GlossaryRoute
+  HelpRoute: typeof HelpRoute
   InternshipsRoute: typeof InternshipsRouteWithChildren
+  LeaderboardRoute: typeof LeaderboardRoute
   LibraryRoute: typeof LibraryRoute
   NotificationsRoute: typeof NotificationsRoute
+  PlannerRoute: typeof PlannerRoute
+  ProfileRoute: typeof ProfileRouteWithChildren
+  ProgressRoute: typeof ProgressRoute
+  QuizRoute: typeof QuizRouteWithChildren
   ResourcesRoute: typeof ResourcesRouteWithChildren
   SavedRoute: typeof SavedRoute
+  SearchRoute: typeof SearchRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/saved': {
       id: '/saved'
       path: '/saved'
@@ -259,6 +492,34 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notifications': {
@@ -275,11 +536,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/internships': {
       id: '/internships'
       path: '/internships'
       fullPath: '/internships'
       preLoaderRoute: typeof InternshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary': {
+      id: '/glossary'
+      path: '/glossary'
+      fullPath: '/glossary'
+      preLoaderRoute: typeof GlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -310,11 +599,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/certificates': {
+      id: '/certificates'
+      path: '/certificates'
+      fullPath: '/certificates'
+      preLoaderRoute: typeof CertificatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies': {
       id: '/case-studies'
       path: '/case-studies'
       fullPath: '/case-studies'
       preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookmarks': {
+      id: '/bookmarks'
+      path: '/bookmarks'
+      fullPath: '/bookmarks'
+      preLoaderRoute: typeof BookmarksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-assistant': {
+      id: '/ai-assistant'
+      path: '/ai-assistant'
+      fullPath: '/ai-assistant'
+      preLoaderRoute: typeof AiAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -330,6 +654,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/resources/$id'
       preLoaderRoute: typeof ResourcesIdRouteImport
       parentRoute: typeof ResourcesRoute
+    }
+    '/quiz/results': {
+      id: '/quiz/results'
+      path: '/results'
+      fullPath: '/quiz/results'
+      preLoaderRoute: typeof QuizResultsRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/profile/edit': {
+      id: '/profile/edit'
+      path: '/edit'
+      fullPath: '/profile/edit'
+      preLoaderRoute: typeof ProfileEditRouteImport
+      parentRoute: typeof ProfileRoute
     }
     '/internships/$id': {
       id: '/internships/$id'
@@ -427,6 +765,27 @@ const InternshipsRouteWithChildren = InternshipsRoute._addFileChildren(
   InternshipsRouteChildren,
 )
 
+interface ProfileRouteChildren {
+  ProfileEditRoute: typeof ProfileEditRoute
+}
+
+const ProfileRouteChildren: ProfileRouteChildren = {
+  ProfileEditRoute: ProfileEditRoute,
+}
+
+const ProfileRouteWithChildren =
+  ProfileRoute._addFileChildren(ProfileRouteChildren)
+
+interface QuizRouteChildren {
+  QuizResultsRoute: typeof QuizResultsRoute
+}
+
+const QuizRouteChildren: QuizRouteChildren = {
+  QuizResultsRoute: QuizResultsRoute,
+}
+
+const QuizRouteWithChildren = QuizRoute._addFileChildren(QuizRouteChildren)
+
 interface ResourcesRouteChildren {
   ResourcesIdRoute: typeof ResourcesIdRoute
 }
@@ -441,16 +800,31 @@ const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AchievementsRoute: AchievementsRoute,
+  AiAssistantRoute: AiAssistantRoute,
+  BookmarksRoute: BookmarksRoute,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  CertificatesRoute: CertificatesRoute,
   CommunityRoute: CommunityRouteWithChildren,
   CoursesRoute: CoursesRouteWithChildren,
   DownloadsRoute: DownloadsRoute,
   EventsRoute: EventsRouteWithChildren,
+  FeedbackRoute: FeedbackRoute,
+  GlossaryRoute: GlossaryRoute,
+  HelpRoute: HelpRoute,
   InternshipsRoute: InternshipsRouteWithChildren,
+  LeaderboardRoute: LeaderboardRoute,
   LibraryRoute: LibraryRoute,
   NotificationsRoute: NotificationsRoute,
+  PlannerRoute: PlannerRoute,
+  ProfileRoute: ProfileRouteWithChildren,
+  ProgressRoute: ProgressRoute,
+  QuizRoute: QuizRouteWithChildren,
   ResourcesRoute: ResourcesRouteWithChildren,
   SavedRoute: SavedRoute,
+  SearchRoute: SearchRoute,
+  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
