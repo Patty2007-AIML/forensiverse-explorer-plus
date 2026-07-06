@@ -344,32 +344,5 @@ function UpcomingEvent() {
 }
 
 /* ---------------- Bottom Nav ---------------- */
-const TABS = [
-  { icon: Home, label: "Home", active: true },
-  { icon: BookOpen, label: "Resources" },
-  { icon: Users, label: "Community" },
-  { icon: GraduationCap, label: "Courses" },
-  { icon: User, label: "Profile" },
-];
-function BottomNav() {
-  return (
-    <motion.nav
-      initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={spring}
-      className="fixed inset-x-0 bottom-0 z-40 mx-auto max-w-[440px]"
-    >
-      <div className="glass flex items-end justify-between rounded-t-3xl px-2 pb-5 pt-3">
-        {TABS.map((t) => (
-          <motion.button
-            key={t.label}
-            whileTap={{ scale: 0.9 }}
-            className={`flex flex-1 flex-col items-center gap-1 py-1 ${t.active ? "text-gold" : "text-foreground/60"}`}
-          >
-            <t.icon className={`h-5 w-5 ${t.active ? "" : "opacity-80"}`} strokeWidth={t.active ? 2.2 : 1.7} />
-            <span className={`text-[11px] ${t.active ? "font-semibold" : ""}`}>{t.label}</span>
-          </motion.button>
-        ))}
-      </div>
-      <div className="mx-auto mb-2 h-1 w-32 rounded-full bg-foreground/40" />
-    </motion.nav>
-  );
-}
+import { BottomNav } from "@/components/fv/BottomNav";
+
