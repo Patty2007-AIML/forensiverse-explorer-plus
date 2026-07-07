@@ -3,7 +3,8 @@ import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 import { AuthShell } from "@/components/fv/PageShell";
 import { PillButton } from "@/components/fv/kit";
 import { useState } from "react";
-import logoImg from "@/assets/logo.png";
+import logoAsset from "@/assets/forensiverse-logo.png.asset.json";
+const logoImg = logoAsset.url;
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [{ title: "Sign in — Forensiverse" }] }),

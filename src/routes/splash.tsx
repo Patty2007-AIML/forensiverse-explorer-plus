@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Fingerprint } from "lucide-react";
-import logoImg from "@/assets/logo.png";
+import logoAsset from "@/assets/forensiverse-logo.png.asset.json";
+const logoImg = logoAsset.url;
 
 export const Route = createFileRoute("/splash")({ component: Splash });
 
