@@ -16,12 +16,12 @@ interface PageShellProps {
 export function PageShell({ title, subtitle, back = true, action, hideNav, children }: PageShellProps) {
   const backTo = typeof back === "string" ? back : "/";
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[440px] pb-28">
+    <div className="mx-auto min-h-screen w-full max-w-[440px] pb-28 md:max-w-6xl md:pb-12 md:pt-24">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 24 }}
-        className="flex items-center justify-between px-4 pt-5 pb-3"
+        className="flex items-center justify-between px-4 pt-5 pb-3 md:px-6"
       >
         <div className="flex items-center gap-3 min-w-0">
           {back && (
@@ -30,8 +30,8 @@ export function PageShell({ title, subtitle, back = true, action, hideNav, child
             </Link>
           )}
           <div className="min-w-0">
-            <h1 className="font-display text-[20px] font-bold leading-tight truncate">{title}</h1>
-            {subtitle && <p className="text-[11px] text-muted-foreground truncate">{subtitle}</p>}
+            <h1 className="font-display text-[20px] font-bold leading-tight truncate md:text-3xl">{title}</h1>
+            {subtitle && <p className="text-[11px] text-muted-foreground truncate md:text-sm">{subtitle}</p>}
           </div>
         </div>
         <div className="shrink-0">{action ?? (
@@ -40,7 +40,7 @@ export function PageShell({ title, subtitle, back = true, action, hideNav, child
           </button>
         )}</div>
       </motion.header>
-      <div className="px-4 space-y-4">{children}</div>
+      <div className="px-4 space-y-4 md:px-6">{children}</div>
       {!hideNav && <BottomNav />}
     </div>
   );
