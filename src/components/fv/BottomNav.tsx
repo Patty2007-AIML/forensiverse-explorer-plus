@@ -1,7 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Home, BookOpen, Users, GraduationCap, User } from "lucide-react";
-import logoImg from "@/assets/logo.png";
+import logoAsset from "@/assets/forensiverse-logo.png.asset.json";
+const logoImg = logoAsset.url;
 
 const TABS = [
   { to: "/", icon: Home, label: "Home" },

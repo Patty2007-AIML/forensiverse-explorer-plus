@@ -9,7 +9,8 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import skullImg from "@/assets/skull.png";
-import logoImg from "@/assets/logo.png";
+import logoAsset from "@/assets/forensiverse-logo.png.asset.json";
+const logoImg = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   component: HomePage,
