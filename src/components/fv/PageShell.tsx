@@ -48,7 +48,7 @@ export function PageShell({ title, subtitle, back = true, action, hideNav, child
 
 export function AuthShell({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-[440px] flex-col px-6 py-10">
+    <div className="mx-auto flex min-h-screen w-full max-w-[440px] flex-col px-6 py-10 md:max-w-md">
       {children}
     </div>
   );
