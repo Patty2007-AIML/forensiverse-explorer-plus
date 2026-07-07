@@ -26,14 +26,18 @@ const fadeUp = {
 
 function HomePage() {
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[440px] pb-28">
-      <TopBar />
-      <div className="px-4 space-y-4">
+    <div className="mx-auto min-h-screen w-full max-w-[440px] pb-28 md:max-w-6xl md:pb-12 md:pt-24">
+      <div className="md:hidden">
+        <TopBar />
+      </div>
+      <div className="px-4 space-y-4 md:px-6 md:space-y-6">
         <SearchBar />
         <HeroCard />
         <StatsRow />
-        <WordOfDay />
-        <DailyQuiz />
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+          <WordOfDay />
+          <DailyQuiz />
+        </div>
         <ContinueJourney />
         <UpcomingEvent />
       </div>
